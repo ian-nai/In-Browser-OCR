@@ -1,0 +1,88 @@
+h1 {
+    color: rgba(48, 99, 46, 0.7); 
+    font-family: helvetica;
+    font-size: 4em;
+    text-align: center;
+    line-height: 90%;
+    text-shadow: 0 0.037em rgba(99, 196, 96, 0.65);
+}
+
+
+h2 {
+    color: black;
+    font-family: arial;
+    font-size: 1.15em;
+    text-align: center
+}
+
+h3 {
+    color: black;
+    font-family: arial;
+    font-size: 1em;
+    text-align: center;
+}
+
+h4 {
+    color: blue;
+    font-family: arial;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+h5 {
+    color: black;
+    font-family: arial;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+#container {
+    width: 350px;
+    margin: auto;
+}
+
+#theDiv {
+    width: 200px;
+    float: left;
+    height: 200px;
+}
+
+#ocr_results {
+    width: 150px;
+    float: left;
+    height: 150px;
+}
+
+#clear {
+    clear: both;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+.input {
+    width: 600px;
+}
