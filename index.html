@@ -22,12 +22,12 @@ Upload your image(s), select your language, and press "Run" to extract text. Cop
 <input type="file" id="fileElementId" name="files[]" size="20" multiple="multiple" accept="image/*" />
 </h5>
 <h5>
-<input id="clickMe" type="button" value="clickme" />
+<input id="runOCR" type="button" value="Run OCR!" />
 </forms>
 </h5>
 
 <script>
-document.getElementById("clickMe").onclick = doFunction;
+document.getElementById("runOCR").onclick = doFunction;
 const image = document.getElementById('fileElementId').files[0];
   console.log(image);
 
