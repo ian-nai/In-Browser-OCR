@@ -7,26 +7,10 @@ h1 {
     text-shadow: 0 0.037em rgba(99, 196, 96, 0.65);
 }
 
-
-
-h2 {
-    color: black;
-    font-family: arial;
-    font-size: 1.15em;
-    text-align: center
-}
-
 h3 {
     color: black;
     font-family: arial;
     font-size: 1em;
-    text-align: center;
-}
-
-h4 {
-    color: blue;
-    font-family: arial;
-    font-size: 1.1em;
     text-align: center;
 }
 
@@ -37,10 +21,24 @@ h5 {
     text-align: center;
 }
 
+textarea {
+    width: 800px;
+    height: 200px;
+}
+
+#clear {
+    clear: both;
+}
+
+.forms {
+    position: relative;
+    display: inline-block;
+}
 
 .dropdown {
     position: relative;
     display: inline-block;
+    text-align: center;
 }
 
 .dropdown-content {
