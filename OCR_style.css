@@ -28,10 +28,6 @@ h2 {
     margin:0;
 } 
 
-#instructions {
-   padding: 8px;
-}
-
 h3 {
     color: black;
     font-family: arial;
@@ -49,6 +45,10 @@ h5 {
 textarea {
     width: 800px;
     height: 200px;
+}
+
+#instructions {
+   padding: 8px;
 }
 
 #clear {
