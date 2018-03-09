@@ -1,3 +1,13 @@
+header {
+    background: none repeat scroll 0 0 #e8e5e5 !important;
+    overflow: hidden;
+}
+
+body {
+    padding:0;
+    margin:0;
+}
+
 h1 {
     color: rgba(48, 99, 46, 0.7); 
     font-family: helvetica;
@@ -5,6 +15,21 @@ h1 {
     text-align: center;
     line-height: 90%;
     text-shadow: 0 0.037em rgba(99, 196, 96, 0.65);
+}
+
+h2 {
+    background: none repeat scroll 0 0 #f2f2f2 !important;
+    overflow: hidden;
+    color: black;
+    font-family: arial;
+    font-size: 0.95em;
+    text-align: center;
+    padding:0;
+    margin:0;
+} 
+
+#instructions {
+   padding: 8px;
 }
 
 h3 {
@@ -28,6 +53,10 @@ textarea {
 
 #clear {
     clear: both;
+}
+
+.btn {
+    font-size: 12px;
 }
 
 .forms {
