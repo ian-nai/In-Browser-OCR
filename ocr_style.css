@@ -1,5 +1,5 @@
 header {
-    background: none repeat scroll 0 0 #e8e5e5 !important;
+    background-color: #e8e5e5;
     overflow: hidden;
 }
 
@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-    background: none repeat scroll 0 0 #f2f2f2 !important;
+    background-color: #f2f2f2;
     overflow: hidden;
     color: black;
     font-family: arial;
