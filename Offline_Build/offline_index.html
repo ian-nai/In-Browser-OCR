@@ -22,6 +22,7 @@ In-browser OCR
 </forms>
 <h3>
 <form method="post">
+    <label for="dropdown">Document Language:</label>
     <select id="dropdown" name="dropdown" onchange="changeHiddenInput(this)">
         <option value="eng">English</option>
         <option value="rus">Russian</option>
@@ -57,7 +58,7 @@ In-browser OCR
 </h5>
 <h3>
 <div class="form-group">
-    <label for="input-fileName">Filename</label>
+    <label for="input-fileName">Filename:</label>
     <input type="text" class="form-control" id="input-fileName" value="my_OCR" placeholder="Enter filename">
     <button id="btn-save" type="submit" class="btn">Save to file</button>
 </div>
