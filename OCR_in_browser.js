@@ -38,7 +38,7 @@ function runOCR(url) {
          }).progress(function(result) {
             document.getElementById("ocr_status")
                     .innerText = result["status"] + " (" +
-                        (result["progress"] * 100) + "%)";
+                        math.Round(result["progress"] * 100) + "%)";
         });
 }
 
