@@ -1,21 +1,23 @@
-var globalVariable;
+let globalVariable = 'eng';
 var select;
 
-document.getElementById("runOCR").onclick = runningOCR;
+
+document.getElementById("setLang").onclick = setOCRlang;
 const image = document.getElementById('fileElementId').files[0];
-  console.log(image);
 
-function runningOCR() {
-var inp = document.getElementById('fileElementId');
-for (var i = 0; i < inp.files.length; ++i) {
-  var name = inp.files.item(i).name;
-  var working_files = inp.files.item(i)
-  //alert("here is a file name: " + name);
-  runOCR(working_files);
-}
-}
 
-window.onload = function () {
+function setOCRlang() {
+    var cust_lang = document.getElementById("customLang");
+    if (cust_lang.value.trim().length === 0) {
+        //pass
+    } else {
+        var custLangInput = document.getElementById("customLang");
+        globalVariable = custLangInput.value;
+    }
+
+    console.log(globalVariable);
+}
+window.onload = function() {
     select = document.getElementById('dropdown');
     console.log(select);
 }
@@ -27,24 +29,12 @@ function changeHiddenInput(objDropDown) {
     globalVariable = objHidden.value;
 }
 
-function runOCR(url) {
-    Tesseract.recognize(url, {
-    lang: globalVariable
-})
-         .then(function(result) {
-            var appendingText = document.getElementById("TextArea")
-                    //.innerText += result.text;
-                    appendingText.innerHTML += result.text;
-         }).progress(function(result) {
-            document.getElementById("ocr_status")
-                    .innerText = result["status"] + " (" +
-                        (result["progress"] * 100) + "%)";
-        });
-}
 
-$("#btn-save").click( function() {
-  var text = $("#TextArea").val();
-  var filename = $("#input-fileName").val()
-  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-  saveAs(blob, filename+".txt");
+$("#btn-save").click(function() {
+    var text = $("#TextArea").val();
+    var filename = $("#input-fileName").val()
+    var blob = new Blob([text], {
+        type: "text/plain;charset=utf-8"
+    });
+    saveAs(blob, filename + ".txt");
 });
