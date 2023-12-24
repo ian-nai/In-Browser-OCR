@@ -113,28 +113,28 @@
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js"></script>
   <script src="OCR_in_browser.js"></script>
   <script type="module">
-    var progress_log;
-    const worker = await Tesseract.createWorker(globalVariable, 1, {
-      workerPath: "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js",
-      logger: function(m) {
-        //console.log(m);
-        progress_log = m.progress;
-        document.getElementById("ocr_status").innerText = progress_log;
+      const recognize = async function() {
+        var progress_log;
+        const worker = await Tesseract.createWorker(globalVariable, 1, {
+        workerPath: "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js",
+        logger: function(m) {
+          //console.log(m);
+          progress_log = m.progress;
+          document.getElementById("ocr_status").innerText = progress_log;
+        }
+      });
+        const all_files = []
+        var inp = document.getElementById('fileElementId');
+        for (var i = 0; i < inp.files.length; ++i) {
+          var name = inp.files.item(i).name;
+          all_files.push(inp.files.item(i));
+        }
+        for (let i = 0; i < all_files.length; i++) {
+          const ret = await worker.recognize(all_files[i]);
+          console.log(ret.data.text);
+          document.getElementById("TextArea").innerHTML += ret.data.text;
+        }
       }
-    });
-    const recognize = async function() {
-      const all_files = []
-      var inp = document.getElementById('fileElementId');
-      for (var i = 0; i < inp.files.length; ++i) {
-        var name = inp.files.item(i).name;
-        all_files.push(inp.files.item(i));
-      }
-      for (let i = 0; i < all_files.length; i++) {
-        const ret = await worker.recognize(all_files[i]);
-        console.log(ret.data.text);
-        document.getElementById("TextArea").innerHTML += ret.data.text;
-      }
-    }
-    document.getElementById('runTesseract').onclick = recognize;
+      document.getElementById('runTesseract').onclick = recognize;
   </script>
 </html>
